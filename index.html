@@ -300,7 +300,7 @@ body{
 .hero-glass{
   position:absolute;
   width:340px;
-  height:340px;
+  max-width:85vw;
   right:7%;
   top:50%;
   transform:translateY(-50%);
@@ -650,6 +650,79 @@ footer::before{
   .impact-box,
   .donate-box{
     padding:40px;
+  }
+
+}
+/* =========================
+   FIX SIDEWAYS SCROLL
+========================= */
+
+html,
+body{
+  overflow-x:hidden !important;
+  width:100%;
+  max-width:100%;
+}
+
+/* Prevent sections from exceeding screen width */
+
+section,
+.container,
+.container-fluid,
+.row{
+  max-width:100%;
+}
+
+/* Bootstrap row fix */
+
+.row{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+/* Prevent floating effects from creating overflow */
+
+.hero,
+.hero::before,
+.hero::after,
+.hero-glass,
+.floating-light{
+  max-width:100%;
+}
+
+/* Mobile Fix */
+
+@media(max-width:768px){
+
+  .hero{
+    overflow:hidden;
+    text-align:left;
+  }
+
+  .hero h1{
+    font-size:2.7rem;
+    line-height:1.05;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  .hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+  }
+
+  .btn-theme,
+  .btn-outline-custom{
+    width:100%;
+    text-align:center;
+  }
+
+  .floating-light{
+    display:none;
   }
 
 }
